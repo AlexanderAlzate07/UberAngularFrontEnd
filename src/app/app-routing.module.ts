@@ -22,8 +22,8 @@ const routes: Routes = [{
   loadChildren: () => import('./modulos/estaciones/estaciones.module').then(m => m.EstacionesModule)
 },
 {
-  path: 'servicios',
-  loadChildren: () => import('./modulos/servicios/servicios.module').then(m => m.ServiciosModule)
+  path: 'rutas',
+  loadChildren: () => import('./modulos/rutas/rutas.module').then(m => m.RutasModule)
 },
 {
   path: 'error',
