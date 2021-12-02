@@ -27,6 +27,7 @@ export class UsuariosService {
   }
 
   getAll(): Observable<UsuarioModelo[]>{
+    console.log(this.token)
     return this.http.get<UsuarioModelo[]>(`${this.url}/usuarios`, {
       headers: new HttpHeaders({
         "Authorization": `Bearer ${this.token}`
@@ -35,7 +36,7 @@ export class UsuariosService {
   }
 
   update(usuario: UsuarioModelo): Observable<UsuarioModelo> {
-    return this.http.put<UsuarioModelo>(`${this.url}/usuarios/${usuario.id}`, {
+    return this.http.patch<UsuarioModelo>(`${this.url}/usuarios/${usuario.id}`, {
       nombre: usuario.nombre,
       apellidos: usuario.apellidos,
       telefono: usuario.telefono,
