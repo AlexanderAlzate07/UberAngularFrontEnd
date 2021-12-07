@@ -9,6 +9,7 @@ import { SeguridadService } from './seguridad.service';
 })
 export class UsuariosService {
 
+  // 9unojw_T
   url = "http://localhost:3000";
   token: string = '';
   
@@ -23,6 +24,10 @@ export class UsuariosService {
       apellidos: usuario.apellidos,
       telefono: usuario.telefono,
       correo: usuario.correo
+    },{
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${this.token}`
+      })
     });
   }
 

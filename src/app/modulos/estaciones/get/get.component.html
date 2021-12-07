@@ -1,1 +1,30 @@
-<p>get works!</p>
+<div class="container">
+  <br>
+  <a routerLink="/estaciones/create" class="btn">Registrar Estación</a>
+
+  <table class="table responsive">
+    <thead>
+      <tr>
+          <th>Nombre</th>
+          <th>Dirección</th>
+          <th>Coordenada X</th>
+          <th>Coordenada Y</th>
+          <th>Tipo</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let p of listado">
+        <td>{{p.nombre}}</td>
+        <td>{{p.direccion}}</td>
+        <td>{{p.coordx}}</td>
+        <td>{{p.coordy}}</td>
+        <td>{{p.tipo}}</td>
+        <td>
+          <a routerLink="/estaciones/edit/{{p.id}}" class="btn">Editar</a>
+          <button class="btn red" (click)="delete(p.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
