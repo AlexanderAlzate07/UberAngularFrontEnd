@@ -17,29 +17,29 @@
             <label for="hora_fin">Hora Fin</label>
         </div>
         </div>
+
         <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
             <input formControlName="placa" type="text" class="validate">
             <label for="placa">Placa</label>
         </div>
-        </div>
-        <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
             <input formControlName="nombre_conductor" type="text" class="validate">
             <label for="nombre_conductor">Nombre Conductor</label>
         </div>
         </div>
+
         <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
             <input formControlName="dinero" type="number" class="validate">
             <label for="dinero">Dinero</label>
         </div>
-        </div>
-
-        <div class="row">
-        <div class="input-field col s12">
-            <input formControlName="ruta" type="text" class="validate">
-            <label for="ruta">Placa</label>
+        <div class="input-field col s6">
+        <label class="active" for="ruta">Ruta</label>
+        <select class="browser-default" formControlName="ruta" >
+            <option value="" disabled selected>Seleccione la ruta</option>
+            <option *ngFor="let ruta of listadoRutas" value="{{ruta.origen}} -- {{ruta.destino}}">{{ruta.origen}} -- {{ruta.destino}}</option>
+        </select>
         </div>
         </div>
     
