@@ -1,0 +1,34 @@
+<div class="container">
+    <br>
+    <a routerLink="/servicios/create" class="btn">Registrar Servicio</a>
+
+    <table class="table responsive">
+        <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Placa</th>
+            <th>Nombre Conductor</th>
+            <th>Dinero</th>
+            <th>Ruta</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let p of listado">
+            <td>{{p.fecha}}</td>
+            <td>{{p.hora_inicio}}</td>
+            <td>{{p.hora_fin}}</td>
+            <td>{{p.placa}}</td>
+            <td>{{p.nombre_conductor}}</td>
+            <td>{{p.dinero}}</td>
+            <td>{{p.ruta}}</td>
+            <td>
+            <a routerLink="/servicios/edit/{{p.id}}" class="btn">Editar</a>
+            <button class="btn red" (click)="delete(p.id)">Eliminar</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

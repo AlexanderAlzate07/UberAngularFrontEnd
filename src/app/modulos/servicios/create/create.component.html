@@ -1,0 +1,52 @@
+<div class="container">
+    <h3 class="center-align">Registrar Servicio</h3>
+    <form [formGroup]="fgValidacion" class="col s12" (ngSubmit)="store()">
+        <div class="row">
+        <div class="input-field col s6">
+            <input formControlName="fecha" type="datetime" class="validate">
+            <label for="fecha">Fecha</label>
+        </div>
+        </div>
+        <div class="row">
+        <div class="input-field col s6">
+            <input formControlName="hora_inicio" type="time" class="validate">
+            <label for="hora_inicio">Hora Inicio</label>
+        </div>
+        <div class="input-field col s6">
+            <input formControlName="hora_fin" type="time" class="validate">
+            <label for="hora_fin">Hora Fin</label>
+        </div>
+        </div>
+        <div class="row">
+        <div class="input-field col s12">
+            <input formControlName="placa" type="text" class="validate">
+            <label for="placa">Placa</label>
+        </div>
+        </div>
+        <div class="row">
+        <div class="input-field col s12">
+            <input formControlName="nombre_conductor" type="text" class="validate">
+            <label for="nombre_conductor">Nombre Conductor</label>
+        </div>
+        </div>
+        <div class="row">
+        <div class="input-field col s12">
+            <input formControlName="dinero" type="number" class="validate">
+            <label for="dinero">Dinero</label>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="input-field col s12">
+            <input formControlName="ruta" type="text" class="validate">
+            <label for="ruta">Placa</label>
+        </div>
+        </div>
+    
+        <div class="row center-align">
+        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="material-icons right">send</i>
+        </button>
+        </div>
+    </form>
+</div>
